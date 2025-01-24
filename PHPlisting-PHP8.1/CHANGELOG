@@ -1,0 +1,293 @@
+phpListings 1.0.7 -> 1.0.8 changelog
+
+[NEW FEATURES]
+
+001 Full PHP 8.2 support. Requires IonCube Loader v13.
+
+/app/Src/Http/File/UploadedFile.php
+/app/Src/Support/Image.php
+/app/Views/default/widgets/listing.html.php
+/app/Controllers/Ajax.php
+/app/Models/Listing.php
+/app/Src/Validation/LengthValidator.php
+/app/Src/Validation/MaxlengthValidator.php
+/app/Src/Validation/MinlengthValidator.php
+/app/Src/Validation/PasswordValidator.php
+/app/Src/Validation/TransmaxlengthValidator.php
+/app/Src/Validation/TransminlengthValidator.php
+/app/Src/Validation/HtmlmaxlengthValidator.php
+
+002 Listing Badges: Admin-assigned or auto-assigned based on the purchased listing product.
+
+/app/Config/Routes.php
+/app/Models/Badge.php
+/app/Models/Listing.php
+/app/Models/Product.php
+/app/Models/Type.php
+/app/Models/Update.php
+/app/Controllers/Ajax.php
+/app/Controllers/Cron.php
+/app/Controllers/Admin/Badges.php
+/app/Controllers/Admin/Listings.php
+/app/Controllers/Admin/Products.php
+/app/Src/Support/Collection.php
+/app/Src/Form/Type/Badge.php
+/app/Views/default/style.css.php:
+.listing-badge {
+    vertical-align: baseline;
+    width: 3.5rem;
+    height: auto;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+/public/css/default/admin/style.css:
+.listing-badge {
+    vertical-align: baseline;
+    width: 3.5rem;
+    height: auto;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+/app/Views/default/widgets/listing.html.php
+/app/Views/default/widgets/pricing.html.php
+/app/Views/default/form/field/badges.html.php
+/app/Views/default/misc/badge.html.php
+/app/Views/default/admin/wrapper.html.php
+/app/Views/default/admin/badges/create.html.php
+/app/Views/default/admin/badges/index.html.php
+/app/Views/default/admin/badges/update.html.php
+/app/I18n/en/pricing.php:
+'label.badges' => 'Badges',
+
+/app/I18n/en/admin.php:
+'nav.label.badges' => ':singular Badges',
+'listings.form.label.badges' => 'Badges',
+'products.form.label.badges' => 'Linked Badges',
+
+'badges.title.index' => ':singular Badges',
+'badges.title.create' => 'Create :singular Badge',
+'badges.title.update' => 'Update :singular Badge',
+'badges.heading.index' => ':singular Badges',
+'badges.heading.create' => 'Create :singular Badge',
+'badges.heading.update' => 'Update :singular Badge',
+'badges.button.create' => 'Add :singular Badge',
+'badges.breadcrumb.index' => ':singular Badges',
+'badges.breadcrumb.create' => 'Create',
+'badges.breadcrumb.update' => 'Update',
+'badges.alert.create.success' => ':singular badge ":name" has been added.',
+'badges.alert.update.success' => ':singular badge ":name" has been updated.',
+'badges.alert.remove.success' => ':singular badge ":name" has been removed.',
+'badges.datatable.label.name' => 'Badge',
+'badges.datatable.label.published' => 'Published',
+'badges.datatable.action.edit' => 'Edit',
+'badges.datatable.action.delete' => 'Delete',
+'badges.form.label.published' => 'Published',
+'badges.form.label.name' => 'Name',
+'badges.form.label.image' => 'Image',
+'badges.form.label.submit' => 'Submit',
+'badges.form.label.update' => 'Update',
+
+003 Enhanced accessibility options and SEO improvements.
+
+/app/Src/Support/Helpers.php
+/app/Src/Support/Image.php
+/app/Models/File.php
+/app/Controllers/Ajax.php
+/app/Src/Form/Type/Dropzone.php
+/app/Views/default/footer.html.php
+/app/Views/default/widgets/cards/category.html.php
+/app/Views/default/widgets/cards/listing.html.php
+/app/Views/default/widgets/cards/location.html.php
+/app/Views/default/widgets/cards/review.html.php
+/app/Views/default/widgets/account-header.html.php
+/app/Views/default/widgets/header.html.php
+/app/Views/default/widgets/image.html.php
+/app/Views/default/widgets/listing-gallery-slider.html.php
+/app/Views/default/widgets/listing-search-results-header-category.html.php
+/app/Views/default/widgets/listing-search-results-header-default.html.php
+/app/Views/default/widgets/listing-search-results-header-location.html.php
+/app/Views/default/widgets/listing.html.php
+/app/Views/default/widgets/newsletter.html.php
+/app/Views/default/widgets/popup.html.php
+/app/Views/default/widgets/pricing.html.php
+/app/Views/default/widgets/quad-box-teaser.html.php
+/app/Views/default/widgets/searchbox.html.php
+/app/Views/default/widgets/slider.html.php
+/app/Views/default/form/field/outputable/dropzone.html.php
+/app/Views/default/form/field/outputable/social.html.php
+/app/Views/default/style.css.php:
+.card-img-top {
+    height: auto;
+}
+/app/I18n/en/account.php:
+'widget.header.label.dashboard' => 'Dashboard',
+'widget.header.label.logout' => 'Logout',
+
+004 No more image file format conversion: Users can now upload PNG, WEBP, and GIF images, preserving their original formats and transparency.
+
+/app/Src/Support/Image.php
+/app/Models/File.php
+/app/Controllers/Ajax.php
+/app/Src/Form/Type/Dropzone.php
+
+005 QR Code Integration: Easily access the listing page URL on any mobile device by scanning the QR code located on the listing summary page. Additionally, listing owners can freely distribute this QR code to attract more visitors to their listing.
+
+/app/Views/default/account/listings/summary.html.php
+/app/Src/Support/Helpers.php
+/app/I18n/en/listing.php:
+'summary.heading.qr' => 'Scan To View Listing',
+
+006 Do-Follow Listing Website Link Product Option: Encourage premium listing product purchases by offering enhanced SEO benefits.
+
+/app/Controllers/Admin/Products.php
+/app/Models/Product.php
+/app/Models/Listing.php
+/app/Views/default/widgets/listing.html.php
+/app/Views/default/widgets/pricing.html.php
+/app/I18n/en/admin.php
+'products.form.label.dofollow' => '"DoFollow" Website Link',
+/app/I18n/en/pricing.php
+'label.dofollow' => '"DoFollow" Website Link',
+
+[UPDATES]
+
+001 jQuery Upgrade: We've upgraded the jQuery library to version 3.7.1, ensuring your website benefits from the latest improvements and optimizations.
+
+/public/js/jquery/jquery.min.js
+
+002 Social Form Field Enhancements: Bluesky, Threads and TripAdvisor have been added to our supported social networks list. Twitter is now X, with a fresh new icon.
+
+/public/css/default/images/social/bluesky.png
+/public/css/default/images/social/threads.png
+/public/css/default/images/social/tripadvisor.png
+/public/css/default/images/social/x.png
+
+003 Contact Form Widget Upgrade: Add multiple contact forms with distinct fields and email templates on various pages for a personalized communication experience.
+
+/app/Widgets/Contactform.php
+/app/I18n/en/widgets.php:
+'contactform.form.label.template' => 'Default email template',
+
+004 Listing widget sidebar order revamped for improved accessibility on small screens — contacts, badges, and opening hours now appear at the top of the page for a seamless mobile user experience.
+
+/app/Views/default/widgets/listing.html.php
+
+005 Listing title with link is now included in the categories breadcrumb on listing sub-pages like add review or send message for easier navigation.
+
+/app/Views/default/widgets/listing-header.html.php
+
+006 The last activity IP address is now visible on the user summary page of the administrator panel for enhanced monitoring and analysis.
+
+/app/Views/default/admin/users/summary.html.php
+
+007 SEO Enhancement: Introducing hreflang tags for enhanced multilingual support and improved search engine visibility.
+
+/app/Src/I18n/Locale.php
+/app/Views/default/header.html.php
+
+008 Discounts Revamped: Set and apply discount codes directly on the invoice payment page, offering greater flexibility compared to the previous listing page setup.
+
+/app/Controllers/Account/Listings.php
+/app/Controllers/Account/Checkout.php
+/app/Controllers/Admin/Discounts.php
+/app/Models/Discount.php
+/app/Models/Invoice.php
+/app/Models/Order.php
+/app/Views/default/account/checkout/index.html.php
+/app/I18n/en/invoice.php:
+'alert.discount.success' => 'Discount has been applied to the invoice.',
+/app/I18n/en/admin.php:
+'discounts.form.label.immutable' => 'Immutable',
+
+009 Improved Mailqueue Handling: Now includes a 30-second timeout to prevent triggering the mail scheduled task lock when encountering SMTP server connectivity issues during the message-sending process.
+
+/app/Repositories/EmailQueue.php
+
+010 Database Optimization: New indexes have been added to enhance performance of the phpls_stats table (type, type_id, date).
+
+011 Admin dashboard cards now include notification badges that indicate the number of pending user account and listing approvals.
+
+/app/Controllers/Admin/Index.php
+/app/Views/default/admin/index/dashboard.html.php
+/public/css/default/admin/style.css:
+.badge-notification {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(30%, -30%);
+}
+
+012 The Flatpickr JS library has been upgraded to the latest version 4.6.13 for enhanced functionality and performance.
+
+/public/js/flatpickr/*
+/app/Views/default/form/field/date.html.php
+/app/Views/default/form/field/dates.html.php
+/app/Views/default/form/field/datetime.html.php
+/app/Views/default/form/field/time.html.php
+
+013 A reset button has been added to the Refine Search form of the Listing Search Results widget, allowing users to easily reset current search options.
+
+/app/Widgets/Listingsearchresults.php
+/app/I18n/en/listing.php:
+'search.form.label.reset' => 'Reset',
+
+014 The Listing Search Results widget now offers a default view option, allowing you to select between Grid and Table views.
+
+/app/Widgets/Listingsearchresults.php
+/app/Views/default/widget/listing-search-results.html.php
+/app/I18n/en/widget.php:
+'listingsearchresults.form.label.default_view' => 'Default view',
+
+[BUGFIXES]
+
+001 An error occurred when viewing archived or cancelled listing invoices linked to a deleted pricing plan.
+
+/app/Views/default/misc/invoice.html.php
+
+002 An error would occur when trying to view a listing claim after its associated pricing plan had been removed.
+
+/app/Controllers/Admin/Claims.php
+/app/Controllers/Account/Claims.php
+/app/Controllers/Admin/Products.php
+/app/Controllers/Admin/Pricings.php
+/app/Models/Pricing.php
+
+003 Custom upload types can no longer be removed if associated with at least one custom form field. To proceed with removal, either the linked field must be deleted or assigned a different upload type.
+
+/app/Models/UploadType.php
+/app/Controllers/Admin/UploadTypes.php
+/app/I18n/en/admin.php:
+'uploadtypes.alert.remove.failed' => 'Unable to delete upload type ":name" due to linked custom form fields. Update or remove those fields before proceeding.',
+
+004 We now verify that all imported CSV file column values are in the UTF-8 encoding. If any field contains non-UTF-8 characters, the entire listing record is skipped.
+
+/app/Controllers/Cron.php
+/app/I18n/en/admin.php:
+'import.error.encoding' => 'Line :line: Non-UTF-8 characters in ":field" value. Listing skipped.',
+
+005 Listing search impressions statistics were mistakenly counted twice in the Listingsearchresults widget, resulting in doubled listing search impression raw stats. This did not affect the daily statistics since the compilation process excludes duplicate records from the same IP.
+
+/app/Widgets/Listingsearchresults.php
+
+006 Orders paid through subscription gateway modules, such as Stripe Subscription, are now restricted from cancellation by the listing owner even if the associated pricing plan has the 'Cancellable' option enabled.
+
+/app/Controllers/Account/Listings.php
+
+007 Adjustments were made to the opening hours and file upload form fields to prevent content overflow from the field container on iPhone 12 mini.
+
+/app/Views/default/form/field/hours.html.php
+
+008 The wrong language phrase was used in the breadcrumb on the admin's widget field options management page.
+
+/app/Views/default/admin/widget-field-options/*
+
+009 Phantom image placeholders on file upload forms. Non-public types like category or location logos can no longer be assigned to custom form fields of the 'File' type.
+
+/app/Controllers/Admin/Fields.php
+/app/Controllers/Admin/ListingFields.php
+
+010 When a new rating category was added to the existing reviews, a default rating of 2.5 stars was applied, rather than using 0 stars.
+
+/app/Views/default/form/field/rating.html.php

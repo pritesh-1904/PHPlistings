@@ -1,0 +1,56 @@
+<?php
+    return [
+        'datatable.label.status' => 'Status',
+        'datatable.label.title' => 'Listing',
+        'datatable.label.product' => 'Product',
+        'datatable.label.added_datetime' => 'Added',
+        'datatable.action.view' => 'View',
+        'datatable.action.pay' => 'Pay',
+        'datatable.bulkaction.pay' => 'Pay',
+
+        'breadcrumb.index' => 'Invoices',
+        'breadcrumb.listing' => ':listing',
+
+        'button.pay' => 'Pay',
+        'button.print' => 'Print',
+        
+        'searchform.label.status' => 'Filter By Status',
+        'searchform.placeholder.listing' => 'Filter By Listing',
+        'searchform.label.submit' => 'Search',
+
+        'alert.payment.success' => 'Invoice has been paid.',
+        'alert.payment.pending' => 'Invoice payment is pending.',
+        'alert.payment.cancelled' => 'Payment has been cancelled.',
+        'alert.invalid_gateway' => 'Invalid or unsupported payment gateway.',
+        'alert.not_found' => 'Invoice not found.',
+        'alert.discount.success' => 'Discount has been applied to the invoice.',
+        'heading' => 'Invoices',
+        'heading.active' => 'Invoice #:id',
+        'breadcrumb.results' => 'Invoices',
+        'breadcrumb.active' => 'Invoice #:id',
+
+        'form.label.gateways' => 'Payment Options',
+        'form.label.submit' => 'Submit',
+        
+        'label.from' => 'From',
+        'label.to' => 'To',
+        'label.id' => 'Invoice ID',
+        'label.order_id' => 'Order ID',
+        'label.status' => 'Status',
+        'label.date' => 'Created',
+        'label.paid_date' => 'Paid',
+        'label.cancelled_date' => 'Cancelled',
+        'label.item' => 'Item Name',
+        'label.price' => 'Price',
+        'label.quantity' => 'Qty',
+        'label.total' => 'Total',
+        'label.subtotal' => 'Subtotal',
+        'label.balance' => 'Balance',
+        'label.discount' => 'Discount',
+        'label.tax' => 'Tax',
+        'label.refund' => 'Refund',
+
+        'label.listing' => 'Listing',
+        'label.product' => 'Product',
+        'label.billing_cycle' => 'Billing Cycle',
+    ];

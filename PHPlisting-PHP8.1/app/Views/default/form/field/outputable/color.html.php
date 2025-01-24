@@ -1,0 +1,1 @@
+<i class="fas fa-square-full fa-2x" style="color:<?php echo $view->value; ?>;"></i>

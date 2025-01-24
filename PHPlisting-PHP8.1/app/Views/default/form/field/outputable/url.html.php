@@ -1,0 +1,1 @@
+<a href="<?php echo $view->value; ?>" rel="nofollow" target="_blank"><?php echo $view->value; ?></a>

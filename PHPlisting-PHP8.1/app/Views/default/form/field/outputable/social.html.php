@@ -1,0 +1,1 @@
+<a href="<?php echo $view->value; ?>" class="social-profile" rel="nofollow" target="_blank"><img src="<?php echo asset('/css/default/images/social/' . $view->type->get('icon_filename')); ?>" width="200" height="200" alt="<?php echo $view->type->get('name'); ?>" /></a>

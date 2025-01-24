@@ -1,0 +1,15 @@
+<div class="mb-5">
+    <h3><?php echo e(__('admin.taxes.heading.index')); ?></h3>
+</div>
+<a href="<?php echo adminRoute('tax-rates/create'); ?>" class="btn btn-success btn-lg mb-3"><i class="fas fa-plus"></i> <?php echo e(__('admin.taxes.button.create')); ?></a>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card border-0 rounded-0 shadow-md p-3">
+            <div class="card-body">
+                <?php echo session('success', null); ?>
+                <?php echo session('error', null); ?>
+                <?php echo $view->taxes; ?>
+            </div>
+        </div>
+    </div>
+</div>
